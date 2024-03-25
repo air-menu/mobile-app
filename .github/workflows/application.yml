@@ -14,7 +14,7 @@ on:
     branches: [ "main", "Developpement" ]
 
 env:
-  BUILD_PATH: 'build\app\outputs\flutter-apk\app-release.apk'
+  BUILD_PATH: 'build/app/outputs/flutter-apk/release/app-release.apk'
 
 jobs:
   build:

@@ -57,13 +57,6 @@ jobs:
           name: apk
           path: build
 
-      - name: Generate a token
-        id: generate-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.CUSTOM_APP_ID }}
-          private-key: ${{ secrets.CUSTOM_API_SECRET }}
-
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -74,4 +67,4 @@ jobs:
             Automated release created
           draft: false
           prerelease: false
-          token: ${{ steps.generate-token.outputs.token }}
+          token: ${{ secrets.CUSTOM_API_SECRET }}
